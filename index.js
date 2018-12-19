@@ -17,6 +17,7 @@ app.get('/', function(req, res){
 
 app.post('/getSantaName', function(req, res){
   console.log('Inside get santa name')
+    console.log('Result: ', req.body.result)
   var intent = req.body.result && req.body.result.metadata.intentName ? req.body.result.metadata.intentName : "noIntent"
     , speech = "This is the default speech"
   console.log('Intent: ', intent)
