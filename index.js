@@ -29,7 +29,7 @@ app.post('/getSantaName', function(req, res){
     });
   }
   else if(intent === 'santaName'){
-    var personName = req.body.queryResult.parameters.personName ? req.body.result.parameters.personName : 'noPerson'
+    var personName = req.body.queryResult.parameters.personName ? req.body.queryResult.parameters.personName : 'noPerson'
     
     console.log('Person Name : ', personName)
     if(personName === 'noPerson'){
