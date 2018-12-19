@@ -41,12 +41,21 @@ app.post('/getSantaName', function(req, res){
     }
     else if(personName === 'Prateek'){
       return res.json({
-        "text": {
-          "text": [
-            "This is a test."
-          ]
-        }
-      });
+          "payload": {
+            "google": {
+              "expectUserResponse": true,
+              "richResponse": {
+                "items": [
+                  {
+                    "simpleResponse": {
+                      "textToSpeech": "this is a simple response"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        });
     }
   }
 })
