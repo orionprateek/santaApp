@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 app.post('/getSantaName', function(req, res){
   console.log('Inside get santa name')
     console.log('Body: ', req.body)
-  var intent = req.body.result && req.body.result.metadata.intentName ? req.body.result.metadata.intentName : "noIntent"
+  var intent = req.body.intent && req.body.intent.displayName ? req.body.intent.displayName : "noIntent"
     , speech = "This is the default speech"
   console.log('Intent: ', intent)
   if(intent === 'noIntent'){
@@ -29,8 +29,8 @@ app.post('/getSantaName', function(req, res){
     });
   }
   else if(intent === 'santaName'){
-    var personName = req.body.result.parameters.personName ? req.body.result.parameters.personName : 'noPerson'
-    console.log('Result: ', req.body.result)
+    var personName = req.body.queryResult.parameters.personName ? req.body.result.parameters.personName : 'noPerson'
+    
     console.log('Person Name : ', personName)
     if(personName === 'noPerson'){
       return res.json({
