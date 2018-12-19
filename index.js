@@ -10,6 +10,11 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.get('/', function(req, res){
+  console.log('Default route hit');
+  res.send('Working Properly')
+})
+
 app.post('/getSantaName', function(req, res){
   var intent = req.body.result && req.body.result.metadata.intentName ? req.body.result.metadata.intentName : "noIntent"
     , speech = "This is the default speech"
