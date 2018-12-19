@@ -28,6 +28,8 @@ app.post('/getSantaName', function(req, res){
   }
   else if(intent === 'santaName'){
     var personName = req.body.result.parameters.personName ? req.body.result.parameters.personName : 'noPerson'
+    console.log('Result: ', req.body.result)
+    console.log('Person Name : ', personName)
     if(personName === 'noPerson'){
       return res.json({
           speech: 'Please provide a valid person name',
