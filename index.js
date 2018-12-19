@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 app.post('/getSantaName', function(req, res){
   console.log('Inside get santa name')
     console.log('Body: ', req.body)
-  var intent = req.body.queryResult.intent && req.body.queryResult.intent.displayName ? req.body.queryResult.intent.displayName : "noIntent"
+  var intent = req.body.result && req.body.result.metadata.intentName ? req.body.result.metadata.intentName : "noIntent"
     , speech = "This is the default speech"
   console.log('Intent: ', intent)
   if(intent === 'noIntent'){
@@ -29,7 +29,7 @@ app.post('/getSantaName', function(req, res){
     });
   }
   else if(intent === 'santaName'){
-    var personName = req.body.queryResult.parameters.personName ? req.body.queryResult.parameters.personName : 'noPerson'
+    var personName = req.body.result.parameters.personName ? req.body.result.parameters.personName : 'noPerson'
     
     console.log('Person Name : ', personName)
     if(personName === 'noPerson'){
@@ -41,20 +41,9 @@ app.post('/getSantaName', function(req, res){
     }
     else if(personName === 'Prateek'){
       return res.json({
-          "payload": {
-            "google": {
-              "expectUserResponse": true,
-              "richResponse": {
-                "items": [
-                  {
-                    "simpleResponse": {
-                      "textToSpeech": "this is a simple response"
-                    }
-                  }
-                ]
-              }
-            }
-          }
+            speech: 'Test',
+            displayText: 'Test',
+            source: 'webhook-santa-app'
         });
     }
   }
