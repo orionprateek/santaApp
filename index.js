@@ -39,42 +39,42 @@ app.post('/getSantaName', function(req, res){
           source: 'webhook-santa-app'
       });
     }
-    else if(personName === 'Prateek'){
+    else if(personName.toLowerCase() === 'prateek'){
       return res.json({
             speech: 'The secret santa of Prateek is Mansi',
             displayText: 'he secret santa of Prateek is Mansi',
             source: 'webhook-santa-app'
         });
     }
-     else if(personName === 'Ajay'){
+     else if(personName.toLowerCase() === 'ajay'){
       return res.json({
             speech: 'The secret santa of Ajay is Aakash',
             displayText: 'he secret santa of Ajay is Aakash',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Aakash'){
+      else if(personName.toLowerCase() === 'aakash'){
       return res.json({
             speech: 'The secret santa of Aakash is Prateek',
             displayText: 'he secret santa of Aakash is Prateek',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Mansi'){
+      else if(personName.toLowerCase() === 'mansi'){
       return res.json({
             speech: 'The secret santa of Mansi is Ajay',
             displayText: 'he secret santa of Mansi is Ajay',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Mohan'){
+      else if(personName.toLowerCase() === 'mohan'){
       return res.json({
             speech: 'The secret santa of Mohan is Sunil',
             displayText: 'he secret santa of Mohan is Sunil',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Sunil'){
+      else if(personName.toLowerCase() === 'sunil'){
       return res.json({
             speech: 'The secret santa of Sunil is Tarun',
             displayText: 'he secret santa of Sunil is Tarun',
@@ -88,70 +88,70 @@ app.post('/getSantaName', function(req, res){
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Hema'){
+      else if(personName.toLowerCase() === 'hema'){
       return res.json({
             speech: 'The secret santa of Hema is Sheetal',
             displayText: 'he secret santa of Hema is Sheetal',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Sheetal'){
+      else if(personName.toLowerCase() === 'sheetal'){
       return res.json({
             speech: 'The secret santa of Sheetal is Jaswinder',
             displayText: 'he secret santa of Sheetal is Jaswinder',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Jaswinder'){
+      else if(personName.toLowerCase() === 'jaswinder'){
       return res.json({
             speech: 'The secret santa of Jaswinder is Srini',
             displayText: 'he secret santa of Jaswinder is Srini',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Srini'){
+      else if(personName.toLowerCase() === 'srini'){
       return res.json({
             speech: 'The secret santa of Srini is Mohan',
             displayText: 'he secret santa of Srini is Mohan',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Mohan'){
+      else if(personName.toLowerCase() === 'mohan'){
       return res.json({
             speech: 'The secret santa of Mohan is Sunil',
             displayText: 'he secret santa of Mohan is Sunil',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Sanju'){
+      else if(personName.toLowerCase() === 'sanju'){
       return res.json({
             speech: 'The secret santa of Sanju is Prathap',
             displayText: 'he secret santa of Sanju is Prathap',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Prathap'){
+      else if(personName.toLowerCase() === 'prathap'){
       return res.json({
             speech: 'The secret santa of Prathap is Sathish',
             displayText: 'he secret santa of Prathap is Sathish',
             source: 'webhook-santa-app'
         });
     }
-       else if(personName === 'Sathish'){
+       else if(personName.toLowerCase() === 'sathish'){
       return res.json({
             speech: 'The secret santa of Sathish is Aswini',
             displayText: 'he secret santa of Sathish is Aswini',
             source: 'webhook-santa-app'
         });
     }
-       else if(personName === 'Aswini'){
+       else if(personName.toLowerCase() === 'aswini'){
       return res.json({
             speech: 'The secret santa of Aswini is Manoj',
             displayText: 'he secret santa of Aswini is Manoj',
             source: 'webhook-santa-app'
         });
     }
-      else if(personName === 'Manoj'){
+      else if(personName.toLowerCase() === 'manoj'){
       return res.json({
             speech: 'The secret santa of Manoj is Akila',
             displayText: 'he secret santa of Manoj is Akila',
@@ -159,7 +159,7 @@ app.post('/getSantaName', function(req, res){
         });
     }
       
-      else if(personName === 'Akila'){
+      else if(personName.toLowerCase() === 'akila'){
       return res.json({
             speech: 'The secret santa of Akila is Ruban',
             displayText: 'he secret santa of Akila is Ruban',
@@ -167,7 +167,7 @@ app.post('/getSantaName', function(req, res){
         });
     }
       
-      else if(personName === 'Ruban'){
+      else if(personName.toLowerCase() === 'ruban'){
       return res.json({
             speech: 'The secret santa of Ruban is Sanju',
             displayText: 'he secret santa of Ruban is Sanju',
