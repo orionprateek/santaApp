@@ -41,30 +41,11 @@ app.post('/getSantaName', function(req, res){
     }
     else if(personName === 'Prateek'){
       return res.json({
-          speech: 'Please provide a valid person name',
-          displayText: 'Please provide a valid person name',
-          source: 'webhook-santa-app'
-      });
-    }
-    else if(personName === 'Ajay'){
-      return res.json({
-          speech: 'Please provide a valid person name',
-          displayText: 'Please provide a valid person name',
-          source: 'webhook-santa-app'
-      });
-    }
-    else if(personName === 'Mansi'){
-      return res.json({
-          speech: 'Please provide a valid person name',
-          displayText: 'Please provide a valid person name',
-          source: 'webhook-santa-app'
-      });
-    }
-    else if(personName === 'Akash'){
-      return res.json({
-          speech: 'Please provide a valid person name',
-          displayText: 'Please provide a valid person name',
-          source: 'webhook-santa-app'
+        "text": {
+          "text": [
+            "This is a test."
+          ]
+        }
       });
     }
   }
