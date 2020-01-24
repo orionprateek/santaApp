@@ -26,12 +26,14 @@ app.post('/getCalculator', function(req, res){
       "fulfillmentText": "no intent found in fulfillment text",
       "fulfillmentMessages": [
         {
-          "text": "messages": [
-              {
-                "speech": "No intent found here",
-                "type": 0
-              }
-            ],
+          "text": {
+                "messages": [
+                    {
+                        "speech": "No intent found here",
+                        "type": 0
+                    }
+                ],
+          }
         }
       ],
       "source": "webhook-calculator-app",
