@@ -23,10 +23,16 @@ app.post('/getCalculator', function(req, res){
   console.log('Intent: ', intent)
   if(intent === 'noIntent'){
     return res.json({
-        speech: 'No intent was found',
-        displayText: 'No intent was found',
-        source: 'webhook-calculator-app'
-    });
+      "fulfillmentText": "no intent found",
+      "fulfillmentMessages": [
+        {
+          "text": [
+            "no intent found"
+          ],
+        }
+      ],
+      "source": "webhook-calculator-app",
+    });      
   }
   else if(intent === 'add'){  
     return res.json({
