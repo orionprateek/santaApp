@@ -23,7 +23,7 @@ app.post('/getCalculator', function(req, res){
   console.log('Intent: ', intent)
   if(intent === 'noIntent'){
     return res.json({
-      "fulfillmentText": "no intent found",
+      "fulfillmentText": "no intent found in fulfillment text",
       "fulfillmentMessages": [
         {
           "text": [
