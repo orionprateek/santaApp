@@ -39,7 +39,8 @@ app.post('/getCalculator', function(req, res){
   else if(intent === 'add'){
     var number1 = req.body.queryResult && req.body.queryResult.parameters.number1 ? parseInt(req.body.queryResult.parameters.number1) : "noParam"
     var number2 = req.body.queryResult && req.body.queryResult.parameters.number2 ? parseInt(req.body.queryResult.parameters.number2) : "noParam"
-    speech = "The sum is " + (number1 + number2)
+    var sum =  number1 + number2
+    speech = "The sum is " + sum
       
     return res.json({      
       "fulfillmentText": speech,
@@ -52,7 +53,16 @@ app.post('/getCalculator', function(req, res){
         }
       }
     ],
-      "source": "webhook-calculator-app"
+    "source": "webhook-calculator-app",
+    "outputContexts": [
+        {
+          "name": "addcontext",
+          "lifespanCount": 5,
+          "parameters": {
+            "sum": sum
+          }
+        }
+      ]
     });     
   }
   
