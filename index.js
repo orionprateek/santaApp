@@ -17,7 +17,7 @@ app.get('/', function(req, res){
 
 app.post('/getCalculator', function(req, res){
   console.log('Inside Calculator route')
-    console.log('Body: ', req.body)
+//     console.log('Body: ', req.body)
   var intent = req.body.queryResult && req.body.queryResult.intent.displayName ? req.body.queryResult.intent.displayName : "noIntent"
     , speech = "This is the default speech"
   console.log('Intent: ', intent)
@@ -95,6 +95,27 @@ app.post('/getCalculator', function(req, res){
       "source": "webhook-calculator-app"
     });     
   }  
+    
+  else if(intent === 'square'){
+//     var number1 = req.body.queryResult && req.body.queryResult.parameters.number1 ? parseInt(req.body.queryResult.parameters.number1) : "noParam"
+//     var number2 = req.body.queryResult && req.body.queryResult.parameters.number2 ? parseInt(req.body.queryResult.parameters.number2) : "noParam"
+//     speech = "The product is " + (number2 * number1)
+      console.log(req.body.queryResult.outputContexts)
+      
+    return res.json({      
+      "fulfillmentText": 'Test',
+      "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            'Test'
+          ]
+        }
+      }
+    ],
+      "source": "webhook-calculator-app"
+    });     
+  } 
 })
 
 
