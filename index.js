@@ -42,20 +42,20 @@ app.post('/getCalculator', function(req, res){
   else if(intent === 'add'){  
     console.log('Add intent')
     return res.json({
-      "fulfillmentText": "Add intent found",
-      "fulfillmentMessages": [
-        {
-          "text": {
-                "messages": [
-                    {
-                        "speech": "Add intent found here",
-                        "type": 0
-                    }
-                ],
+      "payload": {
+        "google": {
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": "this is a simple response"
+                }
+              }
+            ]
           }
         }
-      ],
-      "source": "webhook-calculator-app",
+      }
     });     
   }
 })
