@@ -45,24 +45,15 @@ app.post('/getCalculator', function(req, res){
     return res.json({      
       "fulfillmentText": speech,
       "fulfillmentMessages": [
-      {
-        "text": {
-          "text": [
-            speech
-          ]
-        }
-      }
-    ],
-    "source": "webhook-calculator-app",
-    "outputContexts": [
-        {
-          "name": "addcontext",
-          "lifespanCount": 5,
-          "parameters": {
-            "sum": sum
+          {
+            "text": {
+              "text": [
+                speech
+              ]
+            }
           }
-        }
-      ]
+        ],
+      "source": "webhook-calculator-app"
     });     
   }
   
