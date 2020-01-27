@@ -59,7 +59,7 @@ app.post('/getCalculator', function(req, res){
   else if(intent === 'subtract'){
     var number1 = req.body.queryResult && req.body.queryResult.parameters.number1 ? parseInt(req.body.queryResult.parameters.number1) : "noParam"
     var number2 = req.body.queryResult && req.body.queryResult.parameters.number2 ? parseInt(req.body.queryResult.parameters.number2) : "noParam"
-    speech = "The sum is " + (number2 - number1)
+    speech = "The difference is " + (number2 - number1)
       
     return res.json({      
       "fulfillmentText": speech,
