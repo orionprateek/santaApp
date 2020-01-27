@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 app.post('/getCalculator', function(req, res){
   console.log('Inside Calculator route')
     console.log('Body: ', req.body)
-  var intent = req.body.result && req.body.result.metadata.intentName ? req.body.result.metadata.intentName : "noIntent"
+  var intent = req.body.queryResult && req.body.queryResult.intent.displayName ? req.body.queryResult.intent.displayName : "noIntent"
     , speech = "This is the default speech"
   console.log('Intent: ', intent)
   if(intent === 'noIntent'){
