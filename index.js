@@ -102,14 +102,17 @@ app.post('/getCalculator', function(req, res){
 //     var number2 = req.body.queryResult && req.body.queryResult.parameters.number2 ? parseInt(req.body.queryResult.parameters.number2) : "noParam"
 //     speech = "The product is " + (number2 * number1)
       console.log(req.body.queryResult.outputContexts)
-      
+      var contextNumber1 = req.body.queryResult && req.body.queryResult.outputContexts[0]['parameters']['number1'] ? req.body.queryResult.outputContexts[0]['parameters']['number1'] : 'noContext',
+      var contextNumber2 = req.body.queryResult && req.body.queryResult.outputContexts[0]['parameters']['number2'] ? req.body.queryResult.outputContexts[0]['parameters']['number2'] : 'noContext'    
+      var square = (contextNumber1 + contextNumber2) * (contextNumber1 + contextNumber2)
+      speech = "The square is " + square
     return res.json({      
-      "fulfillmentText": 'Test',
+      "fulfillmentText": speech,
       "fulfillmentMessages": [
       {
         "text": {
           "text": [
-            'Test'
+            speech
           ]
         }
       }
