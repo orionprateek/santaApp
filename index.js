@@ -39,16 +39,18 @@ app.post('/getCalculator', function(req, res){
       "source": "webhook-calculator-app",
     });      
   }
-  else if(intent === 'add'){  
-    console.log('Add intent')
-    return res.json({
+  else if(intent === 'add'){
+    var number1 = req.body.queryResult && req.body.queryResult.parameters.number1 ? parseInt(req.body.queryResult.parameters.number1) : "noParam"
+    var number2 = req.body.queryResult && req.body.queryResult.parameters.number2 ? parseInt(req.body.queryResult.parameters.number2) : "noParam"
+    speech = "The sum is " + (number1 + number2)
       
-      "fulfillmentText": "This is a text response",
+    return res.json({      
+      "fulfillmentText": speech,
       "fulfillmentMessages": [
       {
         "text": {
           "text": [
-            "This is a test"
+            speech
           ]
         }
       }
