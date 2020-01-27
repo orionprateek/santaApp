@@ -75,6 +75,26 @@ app.post('/getCalculator', function(req, res){
       "source": "webhook-calculator-app"
     });     
   }
+    
+  else if(intent === 'multiply'){
+    var number1 = req.body.queryResult && req.body.queryResult.parameters.number1 ? parseInt(req.body.queryResult.parameters.number1) : "noParam"
+    var number2 = req.body.queryResult && req.body.queryResult.parameters.number2 ? parseInt(req.body.queryResult.parameters.number2) : "noParam"
+    speech = "The product is " + (number2 * number1)
+      
+    return res.json({      
+      "fulfillmentText": speech,
+      "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            speech
+          ]
+        }
+      }
+    ],
+      "source": "webhook-calculator-app"
+    });     
+  }  
 })
 
 
