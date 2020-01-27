@@ -40,11 +40,23 @@ app.post('/getCalculator', function(req, res){
     });      
   }
   else if(intent === 'add'){  
+    console.log('Add intent')
     return res.json({
-        speech: 'add intent was found',
-        displayText: 'add intent was found',
-        source: 'webhook-calculator-app'
-    });    
+      "fulfillmentText": "Add intent found",
+      "fulfillmentMessages": [
+        {
+          "text": {
+                "messages": [
+                    {
+                        "speech": "Add intent found here",
+                        "type": 0
+                    }
+                ],
+          }
+        }
+      ],
+      "source": "webhook-calculator-app",
+    });     
   }
 })
 
