@@ -25,17 +25,14 @@ app.post('/getCalculator', function(req, res){
     return res.json({
       "fulfillmentText": "no intent found in fulfillment text",
       "fulfillmentMessages": [
-        {
-          "text": {
-                "messages": [
-                    {
-                        "speech": "No intent found here",
-                        "type": 0
-                    }
-                ],
-          }
+      {
+        "text": {
+          "text": [
+            "no intent found in fulfillment text"
+          ]
         }
-      ],
+      }
+    ],,
       "source": "webhook-calculator-app",
     });      
   }
@@ -55,7 +52,27 @@ app.post('/getCalculator', function(req, res){
         }
       }
     ],
-      "source": "example.com"
+      "source": "webhook-calculator-app"
+    });     
+  }
+  
+  else if(intent === 'subtract'){
+    var number1 = req.body.queryResult && req.body.queryResult.parameters.number1 ? parseInt(req.body.queryResult.parameters.number1) : "noParam"
+    var number2 = req.body.queryResult && req.body.queryResult.parameters.number2 ? parseInt(req.body.queryResult.parameters.number2) : "noParam"
+    speech = "The sum is " + (number2 - number1)
+      
+    return res.json({      
+      "fulfillmentText": speech,
+      "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            speech
+          ]
+        }
+      }
+    ],
+      "source": "webhook-calculator-app"
     });     
   }
 })
