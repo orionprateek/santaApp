@@ -42,20 +42,18 @@ app.post('/getCalculator', function(req, res){
   else if(intent === 'add'){  
     console.log('Add intent')
     return res.json({
-      "payload": {
-        "google": {
-          "expectUserResponse": true,
-          "richResponse": {
-            "items": [
-              {
-                "simpleResponse": {
-                  "textToSpeech": "this is a simple response"
-                }
-              }
-            ]
-          }
+      
+      "fulfillmentText": "This is a text response",
+      "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            "This is a test"
+          ]
         }
       }
+    ],
+      "source": "example.com"
     });     
   }
 })
